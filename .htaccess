@@ -1,0 +1,11 @@
+# .htaccess fot kontiki3
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+<FilesMatch "\.(htaccess|htpasswd|ini|phar|sh)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
