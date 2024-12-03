@@ -2,9 +2,6 @@
 namespace Kontiki3\Information;
 
 use Kontiki3\Core\Apps\Soft\Draft\Controller as SoftDraftController;
-use Kontiki3\Core\View;
-use Kontiki3\Core\Response;
-
 use Kontiki3\Information\Model as InformationModel;
 
 /**

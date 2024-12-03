@@ -7,9 +7,9 @@ namespace Kontiki3\Core;
  */
 
 // set constant
-define('KONTIKI3_ROOT_PATH', __DIR__);
-define('KONTIKI3_CORE_PATH', __DIR__.'/core');
-define('KONTIKI3_PROJECT_PATH', KONTIKI3_ROOT_PATH.'/project');
+define('KONTIKI3_ROOT_PATH', __DIR__ . '/system');
+define('KONTIKI3_CORE_PATH', KONTIKI3_ROOT_PATH . '/core');
+define('KONTIKI3_PROJECT_PATH', KONTIKI3_ROOT_PATH . '/project');
 
 // autoload
 require_once KONTIKI3_CORE_PATH . '/classes/autoload.php';

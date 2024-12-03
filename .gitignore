@@ -1,7 +1,3 @@
-assets/
-favicon.ico
-.user.ini
-uploads
-kontiki3/project/db/kontiki3.*
-kontiki3/logs/app.log
-kontiki3/core/libs/Michelf/
+system/project/db/kontiki3.*
+system/logs/app.log
+system/libs/Michelf/

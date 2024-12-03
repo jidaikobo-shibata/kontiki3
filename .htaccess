@@ -1,11 +1,21 @@
-# .htaccess fot kontiki3
+# .htaccess for kontiki3
+# Handles dynamic routing via kontiki3.php and protects sensitive files.
 
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php [QSA,L]
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /kontiki3/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !kontiki3\.php$
+  RewriteRule ^(.*)$ kontiki3.php [QSA,L]
+</IfModule>
 
 <FilesMatch "\.(htaccess|htpasswd|ini|phar|sh)$">
-  Order allow,deny
-  Deny from all
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
 </FilesMatch>
